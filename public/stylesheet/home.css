@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+font-family: Poppins;
+margin: 0;
+background-color: #010101;
+color: #eee;
+}
+svg{
+width: 25px;
+}
+header{
+width: 80rem;
+margin: auto;
+margin-top: 1rem;
+display: flex;
+height: 4rem;
+justify-content: center;
+align-items: center;
+position: relative;
+z-index: 100;
+background-color: transparent;
+box-shadow: 1px 1px 10px black;
+border-radius: 10px;
+}
+header .logo{
+font-weight: bold;
+color: #ffffff;
+font-size: 2rem;
+width: 50%;
+margin-top: 1rem;
+margin-left:2rem;
+text-shadow: rgb(0, 0, 0) 5px 5px 0.5rem;
+margin-top: 2.5rem;
+}
+header .menu{
+width: 100%;
+padding: 0;
+margin: 0;
+list-style: none;
+display: flex;
+justify-content: center;
+gap: 20px;
+font-weight: 500;
+margin-top: 12px;
+}
+header .menu li{
+margin-top: 0.7rem;
+color: #ffffff;
+font-size: 1.2rem;
+text-shadow: rgb(0, 0, 0) 5px 5px 0.5rem;
+cursor: pointer;
+}
+header .menu li:hover{
+color: #01dbc2;
+text-shadow: #01dbc2 5px 5px 0.5rem;
+text-decoration: underline;
+
+}
+header .search{
+width: 20%;
+}
+/* css slider */
+.slider{
+height: 47rem;
+margin-top: -100px;
+position: relative;
+}
+.slider .list .item{
+position: absolute;
+inset: 0 0 0 0;
+overflow: hidden;
+opacity: 0;
+transition: .5s;
+}
+.slider .list .item img{
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+.slider .list .item::after{
+content: '';
+width: 100%;
+height: 100%;
+position: absolute;
+left: 0;
+bottom: 0;
+background-image: linear-gradient(
+    to top, #000 0%, transparent
+);
+}
+.slider .list .item .content{
+position: absolute;
+left: 8%;
+top: 30%;
+width: 500px;
+max-width: 80%;
+z-index: 1;
+}
+.slider .list .item .content p:nth-child(1){
+text-transform: uppercase;
+letter-spacing: 10px;
+}
+.slider .list .item .content h2{
+font-size: 100px;
+margin: 0;
+}
+.slider .list .item.active{
+opacity: 1;
+z-index: 10;
+}
+@keyframes showContent {
+to{
+    transform: translateY(0);
+    filter: blur(0);
+    opacity: 1;
+}
+}
+.slider .list .item.active p:nth-child(1),
+.slider .list .item.active h2,
+.slider .list .item.active p:nth-child(3){
+transform: translateY(30px);
+filter: blur(20px);
+opacity: 0;
+animation: showContent .5s .7s ease-in-out 1 forwards;
+}
+.slider .list .item.active h2{
+animation-delay: 1s;
+}
+.slider .list .item.active p:nth-child(3){
+animation-duration: 1.3s;
+}
+.arrows{
+position: absolute;
+top: 30%;
+right: 50px;
+z-index: 100;
+}
+.arrows button{
+background-color: #eee5;
+border: none;
+font-family: monospace;
+width: 40px;
+height: 40px;
+border-radius: 5px;
+font-size: x-large;
+color: #eee;
+transition: .5s;
+}
+.arrows button:hover{
+background-color: #eee;
+color: black;
+}
+.thumbnail{
+position: absolute;
+bottom: 50px;
+z-index: 11;
+display: flex;
+gap: 10px;
+width: 100%;
+height: 250px;
+padding: 0 50px;
+box-sizing: border-box;
+overflow: auto;
+justify-content: end;
+}
+.thumbnail::-webkit-scrollbar{
+width: 0;
+}
+.thumbnail .item{
+width: 150px;
+height: 220px;
+filter: brightness(.5);
+transition: .5s;
+flex-shrink: 0;
+
+}
+.thumbnail .item img{
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 10px;
+}
+.thumbnail .item.active{
+filter: brightness(0.9);
+}
+.thumbnail .item .content{
+position: absolute;
+inset: auto 10px 10px 10px;
+text-shadow: rgb(0, 0, 0) 2px 2px 0.1rem;
+}
+@media screen and (max-width: 678px) {
+.thumbnail{
+    justify-content: start;
+}
+.slider .list .item .content h2{
+    line-height:500px;
+    font-size: 60px;
+}
+.arrows{
+    top: 10%;
+}
+}
+p{
+width: 420px;
+}
+
+
+.works{
+width: 100%;
+height: 800px;
+background-color: white;
+}
+
+.works-h1{
+padding-top: 100px;
+text-align: center;
+font-size: 60px;
+color: #010101;
+
+}
+.works-main{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+}
+.works-left{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  flex-direction: column;
+  color: black;
+}
+.works-left h1{
+    font-size: 48px;
+    color: #010101;
+}
+.works-left p{
+    font-size: 18px;
+    color: #010101;
+}
+.works-right{
+    width: 50%;
+
+}
+.works-right-img{
+
+    width: 80%;
+}
+
+.home-container{
+    border-radius: 100px;
+}
