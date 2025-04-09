@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="/stylesheet/home.css">
+      <link rel="stylesheet" href="./StyleSheet/placesToVisit.css">
+      <link rel="stylesheet" href="./StyleSheet/footer.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <style>
+         body{
+            background-color: white;
+            background-size: cover;
+            
+         }
+         .col img{
+            height: 50px;
+         }
+         header{
+            width: 80rem;
+            margin: auto;
+            margin-top: 1rem;
+            display: flex;
+            height: 4rem;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 100;
+            background-color: transparent;
+            box-shadow: 1px 1px 5px black;
+            border-radius: 10px;
+            }
+            header .logo{
+            font-weight: bold;
+            color: #ffffff;
+            font-size: 2rem;
+            width: 50%;
+            margin-top: 1rem;
+            margin-left:2rem;
+            text-shadow: rgb(0, 0, 0) 5px 5px 0.5rem;
+            margin-top: 2.5rem;
+            }
+            header .menu{
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-weight: 500;
+            margin-top: 12px;
+            }
+            header .menu li{
+            margin-top: 0.7rem;
+            color: #ffffff;
+            font-size: 1.2rem;
+            text-shadow: rgb(0, 0, 0) 2px 2px 0.2rem;
+            cursor: pointer;
+            }
+            header .menu li:hover{
+            color: #01dbc2;
+            text-shadow: #01dbc2 5px 5px 0.5rem;
+            text-decoration: underline;
+            
+            }
+            header .search{
+            width: 20%;
+            }
+            .card-super-container{
+               height: 1000px;
+            }
+            .trip{
+               margin-top: 30px;
+               width: 70rem;
+               height: 70px;
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+            
+               box-shadow: 0.5px 0.5px 2px rgb(97, 97, 97);
+               /* border-radius: 40px; */
+            }
+            .label-tag{
+               font-size: 22px;
+               font-weight: bold;
+               color: rgb(11, 26, 147);
+               width: 100px;
+            }
+            .input-tag{
+               font-size: 16px;
+               font-weight: bold;
+               margin-right: 20px;
+               width: 170px;
+            }
+            .trip-submit{
+               margin-top:15px;
+               font-size: 16px;
+               border-radius: 0;
+               height: 70px;
+               margin-left: 20px;
+            }
+            .div-con{
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+               gap: 10px;
+            }
+            .trip-container{
+               width: 100%;
+               height: 1000px;
+               display: flex;
+               align-items: center;
+               justify-content: start;
+               flex-wrap: wrap;
+            }
+
+            /*  Card Container  */
+            .card{
+               width: 300px;
+               height: 400px;
+               margin: 20px;
+               padding: 5px;
+                box-shadow: 0.5px 0.5px 10px rgb(97, 97, 97); 
+               border-radius: 20px;
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               justify-content: center;
+            }
+            .card:hover{
+              transform: scale(1.05);
+               cursor: pointer;
+            }
+            .card-image img{
+               
+               width: 300px;
+               height: 200px;
+               border-radius: 20px;
+               overflow: hidden;
+               background-position: center;
+               background-size: cover;
+            }
+            .card-content{
+               margin-top: 10px;
+               width: 100%;
+               height: 200px;
+               display: flex;
+               flex-direction: column;
+               align-items: start;
+               justify-content: start;
+            }
+            .card-content-name{
+               margin-left: 25px;
+               font-size: 20px;
+               font-weight: bold;
+               color: rgb(0, 0, 0);
+            }
+            .card-content-address{
+               display: flex;
+               align-items: center;
+               font-size: 15px;
+               font-weight: bold;
+               color: rgb(68, 68, 68);
+            }
+            .card-content-address img{
+               width: 25px;
+               height: 25px;
+            }
+            .card-content-person{
+               display: flex;
+               align-items: center;
+               font-size: 16px;
+               font-weight: bold;
+               color: rgb(0, 0, 0);
+            }
+            .card-content-person img{
+               width: 25px;
+               height: 25px;
+            }
+            .card-content-star{
+               display: flex;
+               align-items: center;
+               font-size: 16px;
+               font-weight: bold;
+               color: rgb(0, 0, 0);
+            }
+            .card-content-star img{
+               width: 25px;
+               height: 25px;
+            }
+            .card-content-button{
+               margin-top: 10px;
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+               gap: 20px;
+               width: 100%;
+            }
+            .card-content-button button{
+               font-size: 16px;
+               font-weight: bold;
+               color: white;
+               background-color: #34E0A1;
+               border: none;
+               border-radius: 10px;
+               padding: 10px;
+            }
+            .card-content-button button:hover{
+               background-color: #31ab9c;
+               cursor: pointer;
+            }
+            .card-content-button img{
+               width: 30px;
+               height: 30px;
+            }
+            /* Place to visit */
+            .place-to-visit{
+               width: 80rem;
+               height: 600px;
+               display: flex;
+               align-items: start;
+               justify-content: center;
+               gap: 20px;
+               margin-left: 50px;
+               margin-bottom: 100px;
+               flex-wrap: wrap;
+            }
+            .trip-place{
+               width: 600px;
+               height: 300px;
+               display: flex;
+               align-items: center;
+               justify-content: start;
+               flex-wrap: wrap;
+            }
+            .trip-place:hover{
+               transform: scale(1.03);
+            }
+            .trip-place-container{
+               border-radius: 20px;
+               box-shadow: 0.5px 0.5px 10px rgb(97, 97, 97);
+               width: 100%;
+               height: 260px;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               flex-wrap: wrap;
+               flex-direction: column;
+            }
+            .trip-place-container-left{
+               width: 230px;
+               height: 230px;
+               margin-left: 10px;
+               margin-right: 10px;
+               border-radius: 20px;
+               overflow: hidden;
+               background-position: center;
+               background-size: cover;
+            }
+            .trip-place-container-right{
+               width: 300px;
+               height: 230px;
+               display: flex;
+               align-items: start;
+               justify-content: start;
+               flex-wrap: wrap;
+            }
+            .trip-place-container-right-button{
+               width: 100%;
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+            }
+            .trip-place-container-right-button button{
+               font-size: 16px;
+               font-weight: bold;
+               color: white;
+               background-color: #34E0A1;
+               border: none;
+               border-radius: 10px;
+               padding: 10px;
+
+            }
+            .book-all-btn{
+               font-size: 18px;
+               color: white;
+               background-color: #34E0A1;
+               padding: 20px;
+               font-weight: bold;
+               outline: none;
+               border: none;
+               position: relative;
+               left: 1180px;
+               top: -40px;
+               border-radius: 10px;
+               box-shadow: 0.5px 0.5px 10px rgb(97, 97, 97);
+            }
+      </style>
+      <title>Places</title>
+   </head>
+   <body>
+      <div class="home-container">
+      <header>
+         <div class="logo">PastPort</div>
+         <ul class="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/places">Place to Visit</a></li>
+            <li><a href="/trip">Trip Planner</a></li>
+            <li><a href="/chatbot">Chatbot</a></li>
+            <li><a href="/mybooking">My Booking</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+         </ul>
+         <!-- <div class="search">
+             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+             </svg>
+         </div> -->
+     </header>
+     </div>
+     <div class="search-section">
+      <h1>YOUR ULTIMATE TRIP PLANNER</h1>
+      <h4>Plan & book your dream trip</h4>
+         <form action="/trip" method="post" class="trip">
+            <div class="div-con">
+               <label class="label-tag" style="padding-left: 10px; margin-top: 10px;" for="">Start at</label>
+               <input class="search-bar input-tag" name="city" type="search" placeholder="City">
+            </div>
+            <div class="div-con">
+
+               <label class="label-tag" for="">Date:</label>
+               <input type="date" name="date" class="input-tag">
+            </div>
+            <div class="div-con">
+               <label class="label-tag" for="">Travelers:</label>
+               <input type="text" name="travelers" class="input-tag" placeholder="Number of persons">
+            </div>
+            <input class="search-submit trip-submit" type="submit" name="" id="" value="Start Planning">
+         </form>
+     </div>
+     <div class="title-section">
+      <!-- <h1 style="font-size: 40px; padding-left:70px; color:rgb(0, 0, 0)">Place to visit</h1> -->
+     </div>
+     <hr>
+     <div>
+
+     </div>
+
+     <div class="works">
+      <h1 class="works-h1">How it Works</h1>
+      <div class="works-main">
+          <div class="works-left">
+              <div>
+
+                  <h1>Your Personalized Travel <br> Journey Starts Here.
+                  </h1>
+                  <p>Discover India's rich past. From ancient ruins to magnificent temples, your personalized heritage journey awaits. Answer a few simple questions, and we'll curate a list of historical sites across India tailored to your interests. Explore, learn, and book your tickets online- all in one place.</p>
+              </div>
+              </div>
+          <div class="works-right">
+              <img class="works-right-img" src="/image/chatboxx.jpg" alt="">
+          </div>
+      </div>
+   </div>
+
+
+
+
+      <div class="footer-container">
+         <footer>
+             <div class="row">
+                 <div class="col">
+                     <img src="./image/footerimage.png" width="200px" height="60px" alt="logo">
+                     <p>PastPort is your ultimate platform for booking tickets to heritage sites across India. We provide personalized recommendations and eco-friendly paperless tickets to enhance your travel experience. Discover and explore India's rich cultural heritage with ease and convenience.</p>
+                 </div>
+                 <div class="col">
+                     <h3>Office <div class="underline"><span></span></div></h3>
+                     <p>IMSEC</p>
+                     <p>Dasna Ghaziabad</p>
+                     <p>Uttar Pradesh, PIN 201009, India</p>
+                     <p class="email-id">rahulkumar27382@gmail.com</p>
+                     <h4>+91 - 600679704</h4>
+                 </div> 
+                 <div class="col">
+                     <h3>Links <div class="underline"><span></span></div></h3>
+                     <ul>
+                        <li><a href="./Home.html">HOME</a></li>
+                        <li><a href="./placesToVisit.html">PLACES TO VISIT</a></li>
+                        <li><a href="./Home.html">MY BOOKINGS</a></li>
+                        <!-- <li><a href="#">Features</a></li> -->
+                        <li><a href="./Contact.html">CONTACT US</a></li>
+                   </ul>
+                 </div>
+                 <div class="col">
+                     <h3>Newsletter <div class="underline"><span></span></div></h3>
+                     <form action="">
+                         <i class="fa-regular fa-envelope" ></i>
+                         <input type="email" placeholder="Enter your email id" required>
+                         <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+                     </form>
+                     <div class="social-icons">
+                         <i class="fa-brands fa-facebook"></i>
+                         <i class="fa-brands fa-twitter"></i>
+                         <i class="fa-brands fa-whatsapp"></i>
+                         <i class="fa-brands fa-pinterest"></i>
+                     </div>
+                 </div>
+             </div>
+             <hr>
+             <p class="copyright">Ticketing System  © 2024 - All Rights Reserved</p>
+         </footer>
+     </div>
+   </body>
+   <script>
+      /* document.querySelector(".wishlist").addEventListener("click", function(){
+         if(document.querySelector(".wishlist").src == "./image/unselected-wishlist.png"){
+            document.querySelector(".wishlist").src = "./image/selected-wishlist.png";
+         }
+         else{
+            document.querySelector(".wishlist").src = "./image/unselected-wishlist.png";
+         }
+      }); */
+    /*  document.querySelector(".wishlist").addEventListener("click", function() {
+         const wishlistImage = document.querySelector(".wishlist");
+         if (wishlistImage.src.endsWith("unselected-wishlist.png")) {
+             wishlistImage.src = "./image/selected-wishlist.png";
+         } else {
+             wishlistImage.src = "./image/unselected-wishlist.png";
+         }
+     }); */
+     document.querySelectorAll(".wishlist").forEach(function(wishlistImage) {
+      wishlistImage.addEventListener("click", function() {
+          if (wishlistImage.src.endsWith("unselected-wishlist.png")) {
+              wishlistImage.src = "./image/selected-wishlist.png";
+          } else {
+              wishlistImage.src = "./image/unselected-wishlist.png";
+          }
+      });
+  });
+  
+   </script>
+</html>

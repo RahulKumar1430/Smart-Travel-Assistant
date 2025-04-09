@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>House Details Page - Designed by Aryan</title>
+    <link rel="icon" href="/images/logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/StyleSheet/footer.css">
+    <link rel="stylesheet" href="/StyleSheet/booking.css" />
+    <script
+      src="https://kit.fontawesome.com/c4254e24a8.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .house-details{
+        margin: 0;
+        background-color: rgb(255, 255, 255);
+      }
+      body{
+        background-color: white;  
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav id="navBar" class="navbar-white">
+      <h1>PastPort</h1>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/places">Place to Visit</a></li>
+        <li><a href="/trip">Trip Planner</a></li>
+        <li><a href="/chatbot">Chatbot</a></li>
+        <li><a href="/mybooking">My Booking</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+
+    </nav>
+
+    <div class="house-details">
+      <div class="house-title">
+        <h1><%= place.name %></h1>
+        <div class="row">
+          <div>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <i class="far fa-star"></i>
+            <!-- <span>Timing: 9:30 am to 4:30 pm</span> -->
+          </div>
+          <div>
+            <p><%= place.address %></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <div class="gallery-img-1">
+          <img src="<%= place.image1 %>" />
+        </div>
+        <!-- <div><img src="./assets/images/house-2.png" /></div> -->
+        <!-- <div><img src="./assets/images/house-3.png" /></div> -->
+        <div><img src="<%= place.image2 %>" /></div>
+        <div><img src="<%= place.image3 %>" /></div>
+      </div>
+
+      <div class="small-details">
+        <!-- <h2>Entire rental unit hosted by Brandon</h2>
+        <p>2 guest &nbsp; &nbsp; 2 beds &nbsp; &nbsp; 1 bathroom</p> -->
+        <h4 class="priceperson">Rs <%= place.price_indian %> /person</h4>
+      </div>
+      <hr class="line" />
+      <form class="check-form" action="/bookNow" method="post">
+        <div>
+          <label> Name </label>
+          <input type="text" placeholder="Enter Your Name" name="name" />
+        </div>
+        <div>
+          <label>Phone Number</label>
+          <input type="text" placeholder="Enter Your Phone No" name="phone" />
+        </div>
+        <div class="guest-field">
+          <label>Quantity</label>
+          <input type="number" placeholder="0" name="quantity" />
+        </div>
+        <div class="guest-field">
+          <label>Choose Date</label>
+          <input type="date" placeholder="0" name="date" />
+        </div>
+        <div class="guest-field">
+          <label>Select Nationality:</label>
+          <input class="nationality1" type="button" name="nationality" value="Indian" style="background-color: #01dbc2;padding:10px;border-radius:5px;color:white; margin:5px"/>
+          <input class="nationality2" type="button" name="nationality" value="Foreigner" style="background-color: #01dbc2;padding:10px;border-radius:5px;color:white; margin:5px"/>
+        </div>
+        <input type="text" value="<%= place.image1 %>" name="image" style="display: none;">
+        <input type="text" value="<%= place.address %>" name="address" style="display: none;">
+        <input type="text" value="<%= place.name %>" name="place" style="display: none;">
+        <input type="text" value="<%= place._id%>" name="ticketId" style="display: none;">
+        <input type="text" value="<%= place.price_indian%>" name="price" style="display: none;">
+        <input type="text" value="<%= place.timing%>" name="timing" style="display: none;">
+        <button type="submit">Book Now</button>
+      </form>
+
+      <ul class="details-list">
+       
+
+        <li>
+          <i class="fas fa-paint-brush"></i> CLOSED ON
+          <span><%= place.closed %></span>
+        </li>
+        <li>
+          <i class="fas fa-home"></i> TIMING
+          <span><%= place.timing %></span>
+        </li>
+      </ul>
+      <h2>ABOUT THIS PLACE</h2>
+      <p class="home-desc" style="font-size: 1.2rem;">
+        <%= place.place %>
+      </p>
+      <hr class="line" />
+
+      <div class="map">
+        <h3>Location on map</h3>
+        <iframe
+          src="<%= place.livelocation %>"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+        <b><%= place.address %></b>
+      </div>
+      </div>
+    <footer>
+      <div class="row">
+          <div class="col">
+              <img src="/images/footerimage.png" width="200px" height="60px" alt="logo">
+              <p>PastPort is your ultimate platform for booking tickets to heritage sites across India. We provide personalized recommendations and eco-friendly paperless tickets to enhance your travel experience. Discover and explore India's rich cultural heritage with ease and convenience.</p>
+          </div>
+          <div class="col">
+            <h3>Office <div class="underline"><span></span></div></h3>
+            <p>IMSEC</p>
+            <p>Dasna Ghaziabad</p>
+            <p>Uttar Pradesh, PIN 201009, India</p>
+            <p class="email-id">rahulkumar27382@gmail.com</p>
+            <h4>+91 - 600679704</h4>
+          </div> 
+          <div class="col">
+              <h3>Links <div class="underline"><span></span></div></h3>
+              <ul>
+                <li><a href="./Home.html">HOME</a></li>
+                <li><a href="./placesToVisit.html">PLACES TO VISIT</a></li>
+                <li><a href="./Home.html">MY BOOKINGS</a></li>
+                <!-- <li><a href="#">Features</a></li> -->
+                <li><a href="./Contact.html">CONTACT US</a></li>
+           </ul>
+          </div>
+          <div class="col">
+              <h3>Newsletter <div class="underline"><span></span></div></h3>
+              <form action="">
+                  <i class="fa-regular fa-envelope" ></i>
+                  <input type="email" placeholder="Enter your email id" required>
+                  <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+              </form>
+              <div class="social-icons">
+                  <i class="fa-brands fa-facebook"></i>
+                  <i class="fa-brands fa-twitter"></i>
+                  <i class="fa-brands fa-whatsapp"></i>
+                  <i class="fa-brands fa-pinterest"></i>
+              </div>
+          </div>
+      </div>
+      <hr>
+      <p class="copyright">Ticketing System  © 2024 - All Rights Reserved</p>
+  </footer>
+    <script>
+      var navBar = document.getElementById("navBar");
+
+      function togglebtn() {
+        navBar.classList.toggle("hide-menu");
+      }
+      var priceperson=document.querySelector(".priceperson");
+      var n1=document.querySelector(".nationality1");
+      var n2=document.querySelector(".nationality2");
+      n1.addEventListener("click",function(){
+        n1.style.backgroundColor="#31ab9c";
+        n2.style.backgroundColor="#01dbc2";
+        priceperson.innerHTML="Rs <%= place.price_indian %>/ person";
+      })
+      n2.addEventListener("click",function(){
+        n2.style.backgroundColor="#31ab9c";
+        n1.style.backgroundColor="#01dbc2";
+        priceperson.innerHTML="Rs <%= place.price_foreigner %>/ person";
+      })
+    </script>
+
+  </body>
+</html>
